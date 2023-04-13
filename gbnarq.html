@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Page title</title>
+    <style >
+         .start {
+            background-color: #ff9e55;
+        }
+          .but {
+            font-weight: 1500;
+            font-size: 30px;
+            text-align: center;
+            width: 230px;
+        }
+
+        .but:hover {
+            background-color: rgb(15, 183, 9);;
+        }
+        .tab1{
+            width:100%;  
+            border-color: lightpink;
+            border: 1px solid black;
+            border-radius: 10px;
+        }
+         th,td{
+            border: 1px solid black;
+            border-radius: 10px;
+            text-align: center;
+         }
+          .yellow{
+            width:900px;
+            height:300px;
+            background:black;
+            position: relative;
+            margin-left: 00px;
+            margin-top:5px;
+        }
+         #text{
+            text-align: centre;
+            font-size: 15px;
+        }
+       #red{
+        
+            width:200px;
+            height:290px;
+            background:white;
+            position: absolute;
+            top:5px;
+            left:0px;
+            text-align:center;
+        }
+        #red2{
+        
+            width:200px;
+            height:290px;
+            background:white;
+            position: absolute;
+            top:5px;
+            left:700px;
+            text-align:center;
+        }
+        #red3{
+        
+            width:500px;
+            height:100px;
+            background:white;
+            position: absolute;
+            top:100px;
+            left:200px;
+            text-align:center;
+        }
+        #data{
+        
+            width:100px;
+            height:50px;
+            background:#fff4aa;
+            position: absolute;
+            top:50px;
+            left:200px;
+            text-align:center;
+        }
+        #ack{
+        
+            width:100px;
+            height:50px;
+            background:#aab5ff;
+            position: absolute;
+            top:200px;
+            left:700px;
+            text-align:center;
+        }
+        button{
+             margin-left: 400px;
+        }
+    </style>
+    <script>
+        function move(){
+   
+         let f=document.getElementById("fn").value;
+         
+         if(f=="4"){
+              var db=document.getElementById('data');
+              var ab=document.getElementById('ack');
+              var rdf=document.getElementById('para2');
+              var sdf=document.getElementById('para1');
+             
+    
+        var sd=document.getElementById('d');
+        var ad=document.getElementById('ackd');
+        var poe=0;
+        var anim = setInterval(animate,1);
+        
+        function animate(){
+        
+        if(poe < 700){
+            sd.innerHTML='<b>1234</b>';
+            
+            poe++;
+            db.style.left=poe+"px";
+         sdf.innerHTML="<p>sending 1234 frames</p>";
+        }
+       else if(poe < 1300){
+        db.style.left=100+"px";
+            db.style.top=50+"px";
+            
+            poe++;
+            ad.innerHTML='<b>1234</b>';
+            ab.style.left=-poe+1400+"px";
+            rdf.innerHTML="<b>1234</b><p>recieved 1234 frames</p>";
+        }
+        else if(poe < 1500){
+            sd.innerHTML='<b>5678</b>';
+            poe++;
+            db.style.left=poe-1200+"px";
+            ab.style.left=800+"px";
+            ab.style.top=200+"px";
+         sdf.innerHTML="<p>received ack for 1234 frames and sending 5678 frames</p>";
+        }
+        else if(poe>=1500 && poe < 1900){
+            sd.innerHTML='<b>578</b>';
+            poe++;
+            db.style.left=poe-1200+"px";
+            ab.style.left=800+"px";
+            ab.style.top=200+"px";
+        }
+        else if(poe>=1900 && poe < 2500){
+            db.style.left=100+"px";
+            db.style.top=50+"px";    
+            poe++;
+            ad.innerHTML='<b>5</b>';
+            ab.style.left=-poe+2600+"px";
+            rdf.innerHTML="<b>1234</b><b>5</b><p>7,8 frames are ignored, and sending acknowledgement for 5th frame only</p>";
+        }
+        else if(poe>=2500 && poe < 3100){
+            sd.innerHTML='<b>9</b>';
+            poe++;
+            db.style.left=poe-2400+"px";
+            ab.style.left=800+"px";
+            ab.style.top=200+"px";
+            sdf.innerHTML="<p>received ack for 5th frame and sending 9th frame</p>";
+        }
+        else if(poe>=3100 && poe < 3700){
+        db.style.left=100+"px";
+            db.style.top=50+"px";
+            
+            poe++;
+        rdf.innerHTML="<p>ignored 9th frame because 6th is not received.</p>";
+        }
+        else if(poe>=3700 && poe < 4300){
+            sd.innerHTML='<b>6789</b>';
+            poe++;
+            db.style.left=poe-3700+"px";
+            ab.style.left=800+"px";
+            ab.style.top=200+"px";
+          sdf.innerHTML="<p>Haven't received any ack, and again sending 6789 frames</p>";  
+        }
+        else if(poe>=4300 && poe < 4900){
+        db.style.left=100+"px";
+            db.style.top=50+"px";
+            
+            poe++;
+            ad.innerHTML='<b>6789</b>';
+            ab.style.left=-poe+5000+"px";
+           rdf.innerHTML="<b>1234</b><b>5</b><b>6789</b><p>recieved 6789 frames and sending acknowledgement</p>"; 
+        }
+        else if(poe>=4900 && poe < 5500){
+            sd.innerHTML='<b>10</b>';
+            poe++;
+            db.style.left=poe-4900+"px";
+            ab.style.left=800+"px";
+            ab.style.top=200+"px";
+            sdf.innerHTML="<p>sending 10th frame</p>";
+        }
+        else if(poe>=5500 && poe < 6100){
+        db.style.left=100+"px";
+            db.style.top=50+"px";
+            
+            poe++;
+            ad.innerHTML='<b>10</b>';
+            ab.style.left=-poe+6200+"px";
+            rdf.innerHTML="<b>1234</b><b>5</b><b>6789</b><b>10</b><p>received 10th frame</p>";
+        }
+        else{
+            
+            clearInterval(anim);
+           
+        }
+        }
+        }
+        else if(f=="3"){
+       var db=document.getElementById('data');
+              var ab=document.getElementById('ack');
+              var rdf=document.getElementById('para2');
+              var sdf=document.getElementById('para1');
+             
+    
+        var sd=document.getElementById('d');
+        var ad=document.getElementById('ackd');
+        var poe=0;
+        var anim = setInterval(animate,1);
+        
+        function animate(){
+        if(poe < 700){
+            sd.innerHTML='<b>123</b>';
+            
+            poe++;
+            db.style.left=poe+"px";
+         sdf.innerHTML="<p>sending 123 frames</p>";
+        }
+       else if(poe < 1300){
+        db.style.left=100+"px";
+            db.style.top=50+"px";
+            
+            poe++;
+            ad.innerHTML='<b>123</b>';
+            ab.style.left=-poe+1400+"px";
+            rdf.innerHTML="<b>123</b><p>recieved 123 frames</p>";
+        }
+        else if(poe < 1500){
+            sd.innerHTML='<b>456</b>';
+            poe++;
+            db.style.left=poe-1200+"px";
+            ab.style.left=800+"px";
+            ab.style.top=200+"px";
+         sdf.innerHTML="<p>received ack for 123 frames and sending 456 frames</p>";
+        }
+        else if(poe>=1500 && poe < 1900){
+            sd.innerHTML='<b>46</b>';
+            poe++;
+            db.style.left=poe-1200+"px";
+            ab.style.left=800+"px";
+            ab.style.top=200+"px";
+        }
+        else if(poe>=1900 && poe < 2500){
+            db.style.left=100+"px";
+            db.style.top=50+"px";    
+            poe++;
+            ad.innerHTML='<b>4</b>';
+            ab.style.left=-poe+2600+"px";
+            rdf.innerHTML="<b>123</b><b>4</b><p>6 frames are ignored, and sending acknowledgement for 4th frame only</p>";
+        }
+        else if(poe>=2500 && poe < 3100){
+            sd.innerHTML='<b>7</b>';
+            poe++;
+            db.style.left=poe-2400+"px";
+            ab.style.left=800+"px";
+            ab.style.top=200+"px";
+            sdf.innerHTML="<p>received ack for 4th frame and sending 7th frame</p>";
+        }
+        else if(poe>=3100 && poe < 3700){
+        db.style.left=100+"px";
+            db.style.top=50+"px";
+            
+            poe++;
+        rdf.innerHTML="<b>123</b><b>4</b><p>ignored 7th frame because 5th is not received.</p>";
+        }
+        else if(poe>=3700 && poe < 4300){
+            sd.innerHTML='<b>567</b>';
+            poe++;
+            db.style.left=poe-3700+"px";
+            ab.style.left=800+"px";
+            ab.style.top=200+"px";
+          sdf.innerHTML="<p>Haven't received any ack, and again sending 567 frames</p>";  
+        }
+        else if(poe>=4300 && poe < 4900){
+        db.style.left=100+"px";
+            db.style.top=50+"px";
+            
+            poe++;
+            ad.innerHTML='<b>567</b>';
+            ab.style.left=-poe+5000+"px";
+           rdf.innerHTML="<b>123</b><b>4</b><b>567</b><p>recieved 567 frames and sending acknowledgement</p>"; 
+        }
+        else if(poe>=4900 && poe < 5500){
+            sd.innerHTML='<b>8910</b>';
+            poe++;
+            db.style.left=poe-4900+"px";
+            ab.style.left=800+"px";
+            ab.style.top=200+"px";
+            sdf.innerHTML="<p>sending 8910 frame</p>";
+        }
+        else if(poe>=5500 && poe < 6100){
+        db.style.left=100+"px";
+            db.style.top=50+"px";
+            
+            poe++;
+            ad.innerHTML='<b>8910</b>';
+            ab.style.left=-poe+6200+"px";
+            rdf.innerHTML="<b>123</b><b>4</b><b>567</b><b>8910</b><p>received 8910 frame</p>";
+        }
+        else{
+            
+            clearInterval(anim);
+           
+        }
+        }
+        }
+        }
+        
+    </script>
+</head>
+<body>
+    <div class="start">
+        <br>
+        
+        <h1 style="color: white; font-size: 50px; text-align: center;"><b><u>CN ASSIGNMENT 6 </u></b></h1>
+        <br>
+    </div>
+     
+        
+    <table class="tab1" width="100%">
+        <tr>
+            <th width="30%">
+                <p class="but"><strong><a href="snwp.htm">Stop & Wait</a></strong>
+            </th>
+            <th width="30%">
+                <p class="but"><strong><a href="gbnarq.html">Go Back N ARQ</a></strong>
+            </th>
+            <th width="30%">
+                <p class="but"><strong><a href="sr.html" >Selective Repeat</strong>
+            </th>
+        </tr>
+    <tr>
+        <th colspan="3">
+            <b>Select window size</b>
+    <select id="fn">
+        <option value="3">3</option>
+        <option value="4">4</option>
+    </select>
+         
+            </th>
+            </tr>
+            </table>
+    <button onclick="move()"><h2>CLICK TO START</h2></button>
+    <div class="yellow">
+        <div id="data"><p id="d">SENDER</p></div>
+        <div id="ack"><p id="ackd">RECEIVER</p></div>
+        <div id="red">
+            <h1 id="text">SENDER</h1>
+            <p id="para1"></p>
+        </div>
+        <div id="red2">
+            <h1 id="text">RECEIVER</h1>
+            <p id="para2"></p>
+            </div>
+        <div id="red3"></div>
+        
+        </div>
+</body>
+</html>
+
