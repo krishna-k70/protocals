@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Page title</title>
+    <style type="text/css">
+        .start {
+            background-color: #ff9e55;
+        }
+
+        .yellow {
+            width: 300px;
+            height: 475px;
+            background: black;
+            position: relative;
+            margin-left: 300px;
+            margin-top: 5px;
+            text-align: center;
+        }
+
+        .yellow2 {
+            width: 300px;
+            height: 775px;
+            background: black;
+            position: relative;
+            margin-left: 300px;
+            margin-top: 5px;
+            text-align: center;
+        }
+
+        #text {
+            text-align: centre;
+            font-size: 15px;
+        }
+
+        #red,
+        #red2,
+        #red3 {
+
+            width: 50px;
+            height: 25px;
+            background: white;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            text-align: center;
+        }
+
+        .but {
+            font-weight: 1500;
+            font-size: 30px;
+            text-align: center;
+            width: 230px;
+            color: #ffb200;
+
+        }
+
+        .but:hover {
+            background-color: #ffb200;
+        }
+
+
+        .tab1 {
+            width: 100%;
+            border-color: lightpink;
+            border: 1px solid black;
+            border-radius: 10px;
+        }
+
+        .tab2 {
+
+            border: 1px solid black;
+            border-radius: 10px;
+        }
+
+        th,
+        td {
+            border: 1px solid black;
+            border-radius: 10px;
+            text-align: centre;
+        }
+
+        .middle {
+            position: absolute;
+            display: inline-block;
+        }
+
+        button {
+            margin-left: 400px;
+        }
+
+        .left {
+            margin-left: 0px;
+            margin-top: 0px;
+            position: absolute;
+            display: inline-block;
+        }
+
+        .right {
+            margin-left: 0px;
+            margin-top: 0px;
+        }
+
+        .tab {
+            margin-left: 300px;
+            display: inline-block;
+        }
+
+        .t {
+            display: inline-bolck;
+        }
+
+        .thw {
+            width: 100px;
+        }
+
+        .thx {
+            width: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="start">
+        <br>
+
+        <h1 style="color: white; font-size: 50px; text-align: center;"><b><u>CN ASSIGNMENT 6 </u></b></h1>
+        <br>
+    </div>
+
+    <table class="tab1" width="100%">
+        <tr>
+            <th width="30%">
+                <p class="but"><strong><a href="snwp.htm">Stop & Wait</a></strong>
+            </th>
+            <th width="30%">
+                <p class="but"><strong><a href="gbnarq.html">Go Back N ARQ</a></strong>
+            </th>
+            <th width="30%">
+                <p class="but"><strong><a href="sr.html">Selective Repeat</strong>
+            </th>
+        </tr>
+    </table>
+
+    <button onclick="move()">
+        <h2>NORMAL CASE</h2>
+    </button>
+    <table class="tab1" width="100%">
+        <tr height="300px">
+            <th width="33.3%">
+
+                <table class="tab2" width="100%" height="500px">
+                    <tr>
+                        <th rowspan="10" class="thw">
+                            <h2><u>SENDER</u></h2>
+                        </th>
+                        <th class="thx" rowspan="5">Wait for ack(rtt=1s)</th>
+                        <th id="1">.T=0s(sending 1st frame)</th>
+                    </tr>
+                    <tr>
+                        <th>.</th>
+                    </tr>
+                    <tr>
+                        <th>.</th>
+                    </tr>
+                    <tr>
+                        <th>.</th>
+                    </tr>
+                    <tr>
+                        <th id="3">.</th>
+                    </tr>
+                    <tr>
+                        <th rowspan="5" id="6"></th>
+                        <th>.</th>
+                    </tr>
+                    <tr>
+                        <th>.</th>
+                    </tr>
+                    <tr>
+                        <th>.</th>
+                    </tr>
+                    <tr>
+                        <th>.</th>
+                    </tr>
+                    <tr>
+                        <th id="5">.</th>
+                    </tr>
+                </table>
+
+
+            </th>
+            <th class="yellow">
+
+                <div id="red"><b id="text">Data</b></div>
+            </th>
+            <th>
+                <table class="tab2" width="100%" height="500px">
+                    <tr>
+                        <th>.</th>
+                        <th class="thx" rowspan="5"></th>
+                        <th rowspan="10" class="thw">
+                            <h2><u>RECEIVER</u></h2>
+                        </th>
+
+                    </tr>
+                    <tr>
+                        <th>.</th>
+                    </tr>
+                    <tr>
+                        <th id="2">.</th>
+                    </tr>
+                    <tr>
+                        <th>.</th>
+                    </tr>
+                    <tr>
+                        <th>.</th>
+                    </tr>
+                    <tr>
+                        <th>.</th>
+                        <th rowspan="5"></th>
+                    </tr>
+                    <tr>
+                        <th>.</th>
+                    </tr>
+                    <tr>
+                        <th id="4">.</th>
+                    </tr>
+                    <tr>
+                        <th>.</th>
+                    </tr>
+                    <tr>
+                        <th>.</th>
+                    </tr>
+                </table>
+            </th>
+        </tr>
+    </table>
+    <br>
+    <button onclick="move2()">
+        <h2>DATA LOST</h2>
+    </button>
+    <table class="tab1" width="100%">
+        <tr height="300px">
+            <th width="33.3%">
+
+                <table class="tab2" width="100%" height="775px">
+                    <tr>
+                        <th rowspan="14" class="thw">
+                            <h2><u>SENDER</u></h2>
+                        </th>
+                        <th class="thx" rowspan="4">Wait for ack(rtt=1s)</th>
+                        <th id="1n">.T=0s(sending 1st frame)</th>
+                    </tr>
+                    <tr>
+                        <td>.</td>
+                    </tr>
+                    <tr>
+                        <th>.</th>
+                    </tr>
+                    <tr>
+                        <th>.</th>
+                    </tr>
+                    <tr>
+                        <th rowspan="4" id="8n"></th>
+                        <th id="3n">.</th>
+                    </tr>
+                    <tr>
+                        <th>.</th>
+                    </tr>
+                    <tr>
+                        <th>.</th>
+                    </tr>
+                    <tr>
+                        <th>.</th>
+                    </tr>
+                    <tr>
+                        <th rowspan="5" id="9n"></th>
+                        <th id="5n">.</th>
+                    </tr>
+                    <tr>
+
+                        <th>.</th>
+                    </tr>
+                    <tr>
+                        <th>.</th>
+                    </tr>
+                    <tr>
+                        <th>.</th>
+                    </tr>
+                    <tr>
+                        <th id="7n">.</th>
+                    </tr>
+                    <tr>
+                        <th></th>
+                        <th>.</th>
+                    </tr>
+                </table>
+
+
+            </th>
+            <th class="yellow2">
+
+                <div id="red2"><b id="text2">Data</b></div>
+
+            </th>
+            <th>
+                <table class="tab2" width="100%" height="775px">
+                    <tr>
+                        <th>.</th>
+                        <th class="thx" rowspan="7"></th>
+                        <th rowspan="14" class="thw">
+                            <h2><u>RECEIVER</u></h2>
+                        </th>
+
+                    </tr>
+                    <tr>
+                        <th>.</th>
+                    </tr>
+                    <tr>
+                        <th id="2n">.</th>
+                    </tr>
+                    <tr>
+                        <th>.</th>
+                    </tr>
+                    <tr>
+                        <th>.</th>
+                    </tr>
+                    <tr>
+                        <th>.</th>
+                    </tr>
+                    <tr>
+                        <th id="4n">.</th>
+                    </tr>
+                    <tr>
+                        <th>.</th>
+                        <th rowspan="7"></th>
+                    </tr>
+                    <tr>
+                        <th>.</th>
+                    </tr>
+                    <tr>
+                        <th>.</th>
+                    </tr>
+                    <tr>
+                        <th id="6n">.</th>
+                    </tr>
+                    <tr>
+                        <th>.</th>
+                    </tr>
+                    <tr>
+                        <th>.</th>
+                    </tr>
+                    <tr>
+                        <th>.</th>
+                    </tr>
+                </table>
+            </th>
+        </tr>
+    </table>
+    <br>
+    <button onclick="move3()">
+        <h2>ACK LOST</h2>
+    </button>
+    <table class="tab1" width="100%">
+        <tr height="300px">
+            <th width="33.3%">
+
+                <table class="tab2" width="100%" height="775px">
+                    <tr>
+                        <th rowspan="14" class="thw">
+                            <h2><u>SENDER</u></h2>
+                        </th>
+                        <th class="thx" rowspan="4">Wait for ack(rtt=1s)</th>
+                        <th id="1nn">.T=0s(sending 1st frame)</th>
+                    </tr>
+                    <tr>
+                        <td>.</td>
+                    </tr>
+                    <tr>
+                        <th>.</th>
+                    </tr>
+                    <tr>
+                        <th>.</th>
+                    </tr>
+                    <tr>
+                        <th rowspan="4" id="8nn"></th>
+                        <th id="3nn">.</th>
+                    </tr>
+                    <tr>
+                        <th>.</th>
+                    </tr>
+                    <tr>
+                        <th>.</th>
+                    </tr>
+                    <tr>
+                        <th>.</th>
+                    </tr>
+                    <tr>
+                        <th rowspan="5" id="9nn"></th>
+                        <th id="5nn">.</th>
+                    </tr>
+                    <tr>
+                        <th>.</th>
+                    </tr>
+                    <tr>
+                        <th>.</th>
+                    </tr>
+                    <tr>
+                        <th>.</th>
+                    </tr>
+                    <tr>
+                        <th id="7nn">.</th>
+                    </tr>
+                    <tr>
+                        <th></th>
+                        <th>.</th>
+                    </tr>
+                </table>
+
+
+            </th>
+            <th class="yellow2">
+
+                <div id="red3"><b id="text3">Data</b></div>
+
+            </th>
+            <th>
+                <table class="tab2" width="100%" height="775px">
+                    <tr>
+                        <th>.</th>
+                        <th class="thx" rowspan="7"></th>
+                        <th rowspan="14" class="thw">
+                            <h2><u>RECEIVER</u></h2>
+                        </th>
+
+                    </tr>
+                    <tr>
+                        <th>.</th>
+                    </tr>
+                    <tr>
+                        <th id="2nn">.</th>
+                    </tr>
+                    <tr>
+                        <th>.</th>
+                    </tr>
+                    <tr>
+                        <th>.</th>
+                    </tr>
+                    <tr>
+                        <th>.</th>
+                    </tr>
+                    <tr>
+                        <th id="4nn">.</th>
+                    </tr>
+                    <tr>
+
+                        <th>.</th>
+                        <th rowspan="7"></th>
+                    </tr>
+                    <tr>
+                        <th>.</th>
+                    </tr>
+                    <tr>
+                        <th>.</th>
+                    </tr>
+                    <tr>
+                        <th id="6nn">.</th>
+                    </tr>
+                    <tr>
+                        <th>.</th>
+                    </tr>
+                    <tr>
+                        <th>.</th>
+                    </tr>
+                    <tr>
+                        <th>.</th>
+                    </tr>
+                </table>
+            </th>
+        </tr>
+    </table>
+
+
+</body>
+<script type="text/javascript">
+    function move2() {
+        var redele = document.getElementById('red2');
+
+        var rede = document.getElementById('text2');
+        var poe = 0;
+        var anim = setInterval(animate, 15);
+
+        function animate() {
+            if (poe < 100) {
+                rede.innerHTML = '<b>1</b>';
+                poe++;
+                redele.style.top = poe + "px";
+                redele.style.left = 2 * poe + "px";
+            }
+            else if (poe < 125 && poe >= 100) {
+
+                poe++;
+
+            }
+
+            else if (poe < 225 && poe >= 125) {
+                document.getElementById('2n').innerHTML = '<b>hellow</b>';
+                document.getElementById('3n').innerHTML = '<b>.T=1s</b>';
+                rede.innerHTML = '<b>1</b>';
+                poe++;
+
+            }
+            else if (poe < 225) {
+                document.getElementById('3n').innerHTML = '<b>.T=1s</b>';
+                rede.innerHTML = '<b>1-ack</b>';
+                poe++;
+                redele.style.top = poe + "px";
+                redele.style.left = -2 * poe + 450 + "px";
+
+            }
+            else if (poe < 350) {
+                document.getElementById('3n').innerHTML = '<b>.T=1s(again sending 1st frame)</b>';
+                document.getElementById('8n').innerHTML = '<b>Wait for 1st ack(rtt=1s)</b>';
+                rede.innerHTML = '<b>1</b>';
+                poe++;
+                redele.style.top = poe + "px";
+                redele.style.left = 2 * poe - 450 + "px";
+            }
+            else if (poe < 450) {
+                document.getElementById('4n').innerHTML = '<b>.T=1.45s(got the frame and sending ack)</b>';
+                rede.innerHTML = '<b>1-ack</b>';
+                poe++;
+                redele.style.top = poe + "px";
+                redele.style.left = -2 * poe + 900 + "px";
+            }
+            else if (poe < 575) {
+                document.getElementById('5n').innerHTML = '<b>.T=2s(recieved ack and send 2nd frame)</b>';
+                document.getElementById('9n').innerHTML = '<b>Wait for 2nd ack(rtt=1s)</b>';
+                rede.innerHTML = '<b>2</b>';
+                poe++;
+                redele.style.top = poe + "px";
+                redele.style.left = 2 * poe - 900 + "px";
+            }
+            else if (poe < 675) {
+                document.getElementById('6n').innerHTML = '<b>.T=2.45s(received frame and sending ack)</b>';
+                rede.innerHTML = '<b>2-ack</b>';
+                poe++;
+                redele.style.top = poe + "px";
+                redele.style.left = -2 * poe + 1350 + "px";
+            }
+            else {
+                document.getElementById('7n').innerHTML = '<b>.T=3s(received ack)</b>';
+                clearInterval(anim);
+            }
+
+
+        }
+    }
+    function move() {
+        var redelem = document.getElementById('red');
+        var redel = document.getElementById('text');
+        var poe = 0;
+        var anim = setInterval(animate, 15);
+
+        function animate() {
+
+            if (poe < 125) {
+                redel.innerHTML = '<b>1</b>';
+                poe++;
+                redelem.style.top = poe + "px";
+                redelem.style.left = 2 * poe + "px";
+            }
+            else if (poe < 225) {
+                document.getElementById('2').innerHTML = '<b>.T=0.2345ms(received frame and sending ack)</b>';
+                redel.innerHTML = '<b>1-ack</b>';
+                poe++;
+                redelem.style.top = poe + "px";
+                redelem.style.left = -2 * poe + 450 + "px";
+            }
+            else if (poe < 350) {
+                document.getElementById('3').innerHTML = '<b>.T=1s(received ack and sending 2nd frame)</b>';
+                document.getElementById('6').innerHTML = '<b>Wait for 2nd ack(rtt=1s)</b>';
+                redel.innerHTML = '<b>2</b>';
+                poe++;
+                redelem.style.top = poe + "px";
+                redelem.style.left = 2 * poe - 450 + "px";
+            }
+            else if (poe < 450) {
+                document.getElementById('4').innerHTML = '<b>.T=1.45s(received frame and sending ack)</b>';
+                redel.innerHTML = '<b>2-ack</b>';
+                poe++;
+                redelem.style.top = poe + "px";
+                redelem.style.left = -2 * poe + 900 + "px";
+            }
+
+            else {
+                document.getElementById('5').innerHTML = '<b>.T=2s(received ack)</b>';
+                clearInterval(anim);
+            }
+
+
+        }
+    }
+    function move3() {
+        var wele = document.getElementById('red3');
+
+        var we = document.getElementById('text3');
+        var poe = 0;
+        var anim = setInterval(animate, 15);
+
+        function animate() {
+            if (poe < 125) {
+                we.innerHTML = '<b>1</b>';
+                poe++;
+                wele.style.top = poe + "px";
+                wele.style.left = 2 * poe + "px";
+            }
+
+
+            else if (poe < 140 && poe >= 125) {
+                document.getElementById('2nn').innerHTML = '<b>.T=0.45s(recieved frame and sending ack)</b>';
+                document.getElementById('3nn').innerHTML = '<b>.T=1s(have not received ack)</b>';
+                we.innerHTML = '<b>1</b>';
+                poe++;
+                wele.style.top = poe + "px";
+                wele.style.left = -2 * poe + 450 + "px";
+            }
+            else if (poe >= 140 && poe < 225) {
+                poe++;
+            }
+            else if (poe < 225) {
+                document.getElementById('3nn').innerHTML = '<b>.T=1s</b>';
+                we.innerHTML = '<b>1-ack</b>';
+                poe++;
+                wele.style.top = poe + "px";
+                wele.style.left = -2 * poe + 450 + "px";
+
+            }
+            else if (poe < 350) {
+                document.getElementById('3nn').innerHTML = '<b>.T=1s(Have not received ack and again sending 1st frame)</b>';
+                document.getElementById('8nn').innerHTML = '<b>Wait for 1st ack(rtt=1s)</b>';
+                we.innerHTML = '<b>1</b>';
+                poe++;
+                wele.style.top = poe + "px";
+                wele.style.left = 2 * poe - 450 + "px";
+            }
+            else if (poe < 450) {
+                document.getElementById('4nn').innerHTML = '<b>.T=1.45s(Got the duplicate frame and sending ack)</b>';
+                we.innerHTML = '<b>1-ack</b>';
+                poe++;
+                wele.style.top = poe + "px";
+                wele.style.left = -2 * poe + 900 + "px";
+            }
+            else if (poe < 575) {
+                document.getElementById('5nn').innerHTML = '<b>.T=2s(recieved ack and send 2nd frame)</b>';
+                document.getElementById('9nn').innerHTML = '<b>Wait for 2nd ack(rtt=1s)</b>';
+                we.innerHTML = '<b>2</b>';
+                poe++;
+                wele.style.top = poe + "px";
+                wele.style.left = 2 * poe - 900 + "px";
+            }
+            else if (poe < 675) {
+                document.getElementById('6nn').innerHTML = '<b>.T=2.45s(received frame and sending ack)</b>';
+                we.innerHTML = '<b>2-ack</b>';
+                poe++;
+                wele.style.top = poe + "px";
+                wele.style.left = -2 * poe + 1350 + "px";
+            }
+            else {
+                document.getElementById('7nn').innerHTML = '<b>.T=3s(received ack)</b>';
+                clearInterval(anim);
+            }
+
+
+        }
+    }
+</script>
+
+</html>
